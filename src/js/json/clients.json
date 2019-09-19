@@ -1,27 +1,12 @@
 {
-  "client": [{
-      "name": "Name1",
-      "specialist": "Specialist1"
-    },
-    {
-      "name": "Name1",
-      "specialist": "Specialist1"
-    },
-    {
-      "name": "Name1",
-      "specialist": "Specialist1"
-    },
-    {
-      "name": "Name1",
-      "specialist": "Specialist1"
-    },
-    {
-      "name": "Name1",
-      "specialist": "Specialist1"
-    },
-    {
-      "name": "Name1",
-      "specialist": "Specialist1"
-    }
+  "client": [
+    {"name" : "name1", "specialist": "Specialist1", "number" : "101"},
+    {"name" : "name2", "specialist": "Specialist1", "number" : "102"},
+    {"name" : "name3", "specialist": "Specialist2", "number" : "103"},
+    {"name" : "name4", "specialist": "Specialist2", "number" : "104"},
+    {"name" : "name5", "specialist": "Specialist3", "number" : "105"},
+    {"name" : "name6", "specialist": "Specialist3", "number" : "106"},
+    {"name" : "name7", "specialist": "Specialist1", "number" : "108"},
+    {"name" : "name8", "specialist": "Specialist2", "number" : "107"}
   ]
 }
