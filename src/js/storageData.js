@@ -1,0 +1,1 @@
+export const storageData = JSON.parse(localStorage.getItem('clients')).client;
