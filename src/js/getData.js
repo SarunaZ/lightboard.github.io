@@ -5,10 +5,7 @@
 import { storageData } from './storageData.js';
 import createNode from './createNode.js';
 
-const lightboard = document.querySelector('.lightboard'),
-      node = null;
-
-
+const lightboard = document.querySelector('.lightboard');
 
 const rederData = () => {
   storageData.forEach(item => {
@@ -23,4 +20,4 @@ const rederData = () => {
   });
 }
 
-localStorage.length !== 0 ? rederData() : document.write("No data");
+localStorage.length !== 0 ? rederData() : lightboard.innerText = "No data";

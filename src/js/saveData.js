@@ -12,7 +12,6 @@ const loadData = () => {
   getData(res => {
     let stringData = JSON.stringify(res); 
     localStorage.setItem('clients', stringData)
-    console.log(localStorage)
   })
 }
 
