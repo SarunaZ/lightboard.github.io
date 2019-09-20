@@ -1,1 +1,1 @@
-export const storageData = localStorage.length !== 0 ? JSON.parse(localStorage.getItem('clients')).client : '';
+export let storageData = localStorage.length !== 0 ? JSON.parse(localStorage.getItem('clients')).clients : '';
