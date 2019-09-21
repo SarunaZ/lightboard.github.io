@@ -5,76 +5,62 @@ import createNode from './createNode.js';
 let storageDataz = storageData;
 const specialist = document.querySelector('.specialist__select');
 const row = document.querySelector('.specialist__row');
-console.log(storageDataz);
-    let checked = [];
+let checked = [];
 
 const rederData = () => {
+  const getDataRender = () => {
 
-
-  const getDateRender = () => {
-    // Get all different specialists 
+    // Get all different specialists
     storageDataz.map(item => {
-      checked.indexOf(item.specialist) === -1 ? checked.push(item.specialist) : '';
+      !checked.includes(item.specialist) ? checked.push(item.specialist) : '';
       return checked;
     })
 
-
-
     // render options
+    specialist.innerHTML = '';
     checked.map(item => {
       const option = createNode("option", 'specialist__option');
       specialist.appendChild(option);
       option.innerHTML = item;
     });
+    checked = [];
   }
-  getDateRender();
+  getDataRender();
 
-
-  // const buttonFuncDicks = (itemNo) => {
-
-  // }
   const onChangeHandler = () => {
     row.innerHTML = '';
     let clientData = storageDataz.filter(item => item.specialist === specialist.value);
 
     const dataMap = () => {
-      clientData.map((item, index) => {
-        const p = createNode('div', 'specialist__data');
-        row.appendChild(p);
+      clientData.map(item => {
+        const div = createNode('div', 'specialist__data');
+        row.appendChild(div);
         const markUp = `
             <p class="specialist__client-name">${item.name}</p>
             <p class="specialist__client-no">${item.number}</p>
             <button data-id="${item.number}" class='specialist__delete'>X</button>
     `
-        p.innerHTML = markUp;
-
+        div.innerHTML = markUp;
       })
     }
     dataMap();
   }
 
-   specialist.onchange = () => {
-      document.addEventListener('click', (e) => {
-        if (e.target.matches('.specialist__delete')) {
-          console.log(e)
-          const id = e.target.dataset.id;
-          const newList = storageDataz.filter(list => list.number !== id);
-          localStorage.removeItem('clients');
-          localStorage.setItem('clients', JSON.stringify({
-            clients: [...newList]
-          }));
-          storageDataz = localStorage.length !== 0 ? JSON.parse(localStorage.getItem('clients')).clients : '';
-          console.log(storageDataz)
-          // e.target.parentNode.remove();
-          // getDateRender();
-          onChangeHandler();
-        }
-      }, false);
-     onChangeHandler();
-    }
-
-
+  specialist.onchange = () => {
+    document.addEventListener('click', (e) => {
+      if (e.target.matches('.specialist__delete')) {
+        const id = e.target.dataset.id;
+        const newList = storageDataz.filter(list => list.number !== id);
+        localStorage.removeItem('clients');
+        localStorage.setItem('clients', JSON.stringify({
+          clients: [...newList]
+        }));
+        storageDataz = JSON.parse(localStorage.getItem('clients')).clients;
+        onChangeHandler();
+      }
+    }, false);
+    onChangeHandler();
+  }
 }
-
 
 localStorage.length !== 0 ? rederData() : specialist.innerText = "No data";
