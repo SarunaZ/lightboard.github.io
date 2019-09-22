@@ -1,11 +1,51 @@
+@media screen and (min-width: 768px) {
+  .center__xy {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
 .lightboard {
-  display: flex;
+  height: 485px;
   font-family: monospace;
-  justify-content: space-between;
+}
+@media screen and (min-width: 768px) {
+  .lightboard {
+    max-width: 768px;
+    overflow: hidden;
+    height: 332px;
+  }
 }
 .lightboard__row {
-  width: 15%;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .lightboard__row {
+    display: inline-block;
+    width: 30%;
+  }
 }
 .lightboard__number {
   font-size: 35px;
+}
+
+.admin__form {
+  height: 320px;
+  width: 450px;
+}
+.admin__input {
+  margin-bottom: 15px;
+}
+.admin__label {
+  display: block;
+}
+.admin__text-field {
+  box-sizing: border-box;
+  display: block;
+  max-width: 345px;
+  width: 100%;
 }

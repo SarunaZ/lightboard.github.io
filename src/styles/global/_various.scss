@@ -1,0 +1,12 @@
+.center {
+  &__xy {
+    @media screen and (min-width: 768px) {
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}

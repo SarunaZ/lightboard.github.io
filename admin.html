@@ -1,19 +1,35 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <link href="dist/bundle.css" rel="stylesheet" type="text/css"></head>
-  <body>
-    <div class="admin">
-      <button>Išsaugoti</button>
-      <form action="" class="admin__form">
-        <label for="update" class="admin__label">Naujas klientas</label>
-        <input type="text" name="update" class="admin__text-field client--admin">
-        <label for="update" class="admin__label">Specialistas</label>
-        <input type="text" name="update" class="admin__text-field specialist--admin">
-        <input type="submit" class="admin__submit">
-      </form>
-    </div>
-    <script type="module" src="dist/bundle.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=Edge"
+        http-equiv="X-UA-Compatible">
+  <link href="dist/bundle.css"
+        rel="stylesheet"
+        type="text/css">
+  <title></title>
+</head>
+<body>
+  <div class="admin">
+    <button>Išsaugoti</button>
+    <form action=""
+          class="admin__form center__xy">
+      <div class="admin__input">
+        <label class="admin__label"
+             for="update">Naujas klientas</label> <input class="admin__text-field client--admin"
+             name="update"
+             type="text">
+      </div>
+      <div class="admin__input">
+        <label class="admin__label"
+             for="update">Specialistas</label> <input class="admin__text-field specialist--admin"
+             name="update"
+             type="text"> <input class="admin__submit"
+             type="submit">
+      </div>
+    </form>
+  </div>
+  <script src="dist/bundle.js"
+        type="module"></script>
+</body>
 </html>

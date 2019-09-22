@@ -1,10 +1,20 @@
 .lightboard {
-  display: flex;
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+    overflow: hidden;
+    height: 332px;
+  }
+  
+  height: 485px;
   font-family: monospace;
-  justify-content: space-between;
 
   &__row {
-    width: 15%;
+    @media screen and (min-width: 768px) {
+      display: inline-block;
+      width: 30%;
+    }
+    
+    text-align: center;
   }
 
   &__number {

@@ -65,4 +65,5 @@ const deleteHandler = () => {
   } : '';
 } 
 
-localStorage.length !== 0 ? rederData() : specialist.innerText = "No data";
+localStorage.length !== 0 ? rederData() :
+specialist ? specialist.innerText = "No data" : '';

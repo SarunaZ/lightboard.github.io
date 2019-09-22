@@ -1,0 +1,21 @@
+.admin {
+  &__form {
+    height: 320px;
+    width: 450px;
+  }
+
+  &__input {
+    margin-bottom: 15px;
+  }
+
+  &__label {
+    display: block;
+  }
+
+  &__text-field {
+    box-sizing: border-box;
+    display: block;
+    max-width: 345px;
+    width: 100%;
+  }
+}
