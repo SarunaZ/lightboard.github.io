@@ -1,7 +1,10 @@
 .lightboard {
+  display: flex;
+  justify-content: space-evenly;
+
   @media screen and (min-width: 768px) {
-    max-width: 768px;
-    overflow: hidden;
+    height: 180px;
+    padding: 0 55px;
   }
 
   &__row {
@@ -14,6 +17,8 @@
   }
 
   &__number {
-    font-size: 35px;
+    font-size: 60px;
+    font-weight: 700;
+    margin: 0;
   }
 }
