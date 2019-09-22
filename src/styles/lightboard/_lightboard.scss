@@ -1,0 +1,19 @@
+.lightboard {
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+    overflow: hidden;
+  }
+
+  &__row {
+    @media screen and (min-width: 768px) {
+      display: inline-block;
+      width: 30%;
+    }
+
+    text-align: center;
+  }
+
+  &__number {
+    font-size: 35px;
+  }
+}
