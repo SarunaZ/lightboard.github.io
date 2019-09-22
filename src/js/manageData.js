@@ -17,7 +17,7 @@ const rederData = () => {
     })
 
     // render options
-    specialist ? specialist.innerHTML = '' : '';
+    // specialist ? specialist.innerHTML = '' : '';
     checked.map(item => {
       const option = createNode("option", 'specialist__option');
       specialist ? specialist.appendChild(option) : '';
