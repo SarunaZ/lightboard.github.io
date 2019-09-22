@@ -2,18 +2,14 @@
   @media screen and (min-width: 768px) {
     max-width: 768px;
     overflow: hidden;
-    height: 332px;
   }
-  
-  height: 485px;
-  font-family: monospace;
 
   &__row {
     @media screen and (min-width: 768px) {
       display: inline-block;
       width: 30%;
     }
-    
+
     text-align: center;
   }
 

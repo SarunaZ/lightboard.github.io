@@ -19,7 +19,7 @@ const renderConfirmation = () => {
       <p class="admin__confirmation-text"> Klientas irasytas </p>
   `;
   const confirmationNode = createNode('div', 'admin__warning');
-  adminNode.appendChild(confirmationNode);
+  updateForm.appendChild(confirmationNode);
   confirmationNode.innerHTML = markup;
 }
 
@@ -51,6 +51,7 @@ const updateData = () => {
   newStorageData = JSON.parse(localStorage.getItem('clients')).clients;
   updateForm.reset();
   renderConfirmation();
+  setTimeout(() => {location.reload();}, 1500);
 }
 
 updateForm ? updateForm.addEventListener('submit', validation) : '';
