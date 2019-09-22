@@ -1,0 +1,48 @@
+.admin {
+  &__form {
+    @media screen and (min-width: 768px) {
+      max-width: 450px;
+      height: 400px;
+    }
+
+    background: linear-gradient(45deg, #f8f8f8, #d3d3d3);
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__input {
+    padding-top: 40px;
+  }
+
+  &__label {
+    color: #828282;
+    display: block;
+    font-weight: 300;
+    padding-bottom: 20px;
+  }
+
+  &__text-field {
+    border: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: block;
+    height: 45px;
+    margin: 0 auto;
+    max-width: 345px;
+    padding: 15px;
+    width: 100%;
+  }
+
+  &__submit {
+    @media screen and (min-width: 768px) {
+      margin-bottom: 0;
+    }
+
+    background-color: #60d55b;
+    color: #fbfbfb;
+    margin: 50px auto;
+  }
+}

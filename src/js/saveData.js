@@ -1,4 +1,4 @@
-const button = document.querySelector('button');
+const button = document.querySelector('.save');
 
 const getData = (callback) => {
   fetch('src/js/json/clients.json')
@@ -8,11 +8,13 @@ const getData = (callback) => {
   })
 }
 
-const loadData = () => {
+const loadData = (e) => {
+  e.preventDefault();
   getData(res => {
     let stringData = JSON.stringify(res); 
     localStorage.setItem('clients', stringData)
   })
+  alert('Pavyzdiniai duomenys išaugoti');
 }
 
-button.addEventListener('click', loadData);
+button ? button.addEventListener('click', loadData) : '';
