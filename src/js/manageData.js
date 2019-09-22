@@ -2,7 +2,7 @@ import {
   storageData
 } from './storageData.js';
 import createNode from './createNode.js';
-let storageDataz = storageData;
+let newStorageData = storageData;
 const specialist = document.querySelector('.specialist__select');
 const dataContainer = document.querySelector('.specialist__data');
 let checked = [];
@@ -11,7 +11,7 @@ const rederData = () => {
   const getDataRender = () => {
 
     // Get all different specialists
-    storageDataz.map(item => {
+    newStorageData.map(item => {
       !checked.includes(item.specialist) ? checked.push(item.specialist) : '';
       return checked;
     })
@@ -23,13 +23,12 @@ const rederData = () => {
       specialist ? specialist.appendChild(option) : '';
       option.innerHTML = item;
     });
-    checked = [];
   }
   getDataRender();
 
   const onChangeHandler = () => {
     dataContainer.innerHTML = '';
-    let clientData = storageDataz.filter(item => item.specialist === specialist.value);
+    let clientData = newStorageData.filter(item => item.specialist === specialist.value);
 
     const dataMap = () => {
       clientData.map(item => {
@@ -45,25 +44,25 @@ const rederData = () => {
     }
     dataMap();
   }
-const deleteHandler = () => {
-  document.addEventListener('click', (e) => {
-    if (e.target.matches('.specialist__delete')) {
-      const id = e.target.dataset.id;
-      const newList = storageDataz.filter(list => list.number !== id);
-      localStorage.removeItem('clients');
-      localStorage.setItem('clients', JSON.stringify({
-        clients: [...newList]
-      }));
-      storageDataz = JSON.parse(localStorage.getItem('clients')).clients;
-      onChangeHandler();
-    }
-  }, false);
-}
-    specialist ? specialist.onchange = () => {
-      deleteHandler();
-      onChangeHandler();
+  const deleteHandler = () => {
+    document.addEventListener('click', (e) => {
+      if (e.target.matches('.specialist__delete')) {
+        const id = e.target.dataset.id;
+        const newList = newStorageData.filter(list => list.number !== id);
+        localStorage.removeItem('clients');
+        localStorage.setItem('clients', JSON.stringify({
+          clients: [...newList]
+        }));
+        newStorageData = JSON.parse(localStorage.getItem('clients')).clients;
+        onChangeHandler();
+      }
+    }, false);
+  }
+  specialist ? specialist.onchange = () => {
+    deleteHandler();
+    onChangeHandler();
   } : '';
-} 
+}
 
 localStorage.length !== 0 ? rederData() :
-specialist ? specialist.innerText = "No data" : '';
+  specialist ? specialist.innerText = "No data" : '';
