@@ -53,5 +53,5 @@ const updateData = () => {
   renderConfirmation();
 }
 
-updateForm.addEventListener('submit', validation);
+updateForm ? updateForm.addEventListener('submit', validation) : '';
 

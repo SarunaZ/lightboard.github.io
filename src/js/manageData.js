@@ -17,10 +17,10 @@ const rederData = () => {
     })
 
     // render options
-    specialist.innerHTML = '';
+    specialist ? specialist.innerHTML = '' : '';
     checked.map(item => {
       const option = createNode("option", 'specialist__option');
-      specialist.appendChild(option);
+      specialist ? specialist.appendChild(option) : '';
       option.innerHTML = item;
     });
     checked = [];
@@ -45,22 +45,24 @@ const rederData = () => {
     }
     dataMap();
   }
-
-  specialist.onchange = () => {
-    document.addEventListener('click', (e) => {
-      if (e.target.matches('.specialist__delete')) {
-        const id = e.target.dataset.id;
-        const newList = storageDataz.filter(list => list.number !== id);
-        localStorage.removeItem('clients');
-        localStorage.setItem('clients', JSON.stringify({
-          clients: [...newList]
-        }));
-        storageDataz = JSON.parse(localStorage.getItem('clients')).clients;
-        onChangeHandler();
-      }
-    }, false);
-    onChangeHandler();
-  }
+const deleteHandler = () => {
+  document.addEventListener('click', (e) => {
+    if (e.target.matches('.specialist__delete')) {
+      const id = e.target.dataset.id;
+      const newList = storageDataz.filter(list => list.number !== id);
+      localStorage.removeItem('clients');
+      localStorage.setItem('clients', JSON.stringify({
+        clients: [...newList]
+      }));
+      storageDataz = JSON.parse(localStorage.getItem('clients')).clients;
+      onChangeHandler();
+    }
+  }, false);
 }
+    specialist ? specialist.onchange = () => {
+      deleteHandler();
+      onChangeHandler();
+  } : '';
+} 
 
 localStorage.length !== 0 ? rederData() : specialist.innerText = "No data";

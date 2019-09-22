@@ -1,0 +1,13 @@
+.lightboard {
+  display: flex;
+  font-family: monospace;
+  justify-content: space-between;
+
+  &__row {
+    width: 15%;
+  }
+
+  &__number {
+    font-size: 35px;
+  }
+}

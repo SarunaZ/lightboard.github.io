@@ -15,4 +15,4 @@ const loadData = () => {
   })
 }
 
-button.addEventListener('click', loadData);
+button ? button.addEventListener('click', loadData) : '';

@@ -7,17 +7,17 @@ import createNode from './createNode.js';
 
 const lightboard = document.querySelector('.lightboard');
 
-const rederData = () => {
+const renderData = () => {
   storageData.forEach(item => {
     const row = createNode("div", 'lightboard__row');
     const markup = `
-      <p class="lightboard__name">${item.number}</p>
+      <p class="lightboard__number">${item.number}</p>
       <p class="lightboard__name">${item.name}</p>
-      <p class="lightboard__name">${item.specialist}</p>
+      <p class="lightboard__specialist">${item.specialist}</p>
     `;
-    lightboard.appendChild(row);
+    lightboard ? lightboard.appendChild(row) : '';
     row.innerHTML = markup
   });
 }
 
-localStorage.length !== 0 ? rederData() : lightboard.innerText = "No data";
+localStorage.length !== 0 ? renderData() : lightboard.innerText = "No data";
