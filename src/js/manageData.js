@@ -4,7 +4,7 @@ import {
 import createNode from './createNode.js';
 let storageDataz = storageData;
 const specialist = document.querySelector('.specialist__select');
-const row = document.querySelector('.specialist__row');
+const dataContainer = document.querySelector('.specialist__data');
 let checked = [];
 
 const rederData = () => {
@@ -28,17 +28,17 @@ const rederData = () => {
   getDataRender();
 
   const onChangeHandler = () => {
-    row.innerHTML = '';
+    dataContainer.innerHTML = '';
     let clientData = storageDataz.filter(item => item.specialist === specialist.value);
 
     const dataMap = () => {
       clientData.map(item => {
-        const div = createNode('div', 'specialist__data');
-        row.appendChild(div);
+        const div = createNode('div', 'specialist__row');
+        dataContainer.appendChild(div);
         const markUp = `
             <p class="specialist__client-name">${item.name}</p>
             <p class="specialist__client-no">${item.number}</p>
-            <button data-id="${item.number}" class='specialist__delete'>X</button>
+            <button data-id="${item.number}" class='specialist__delete button'>Aptarnauta</button>
     `
         div.innerHTML = markUp;
       })

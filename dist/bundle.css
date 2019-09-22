@@ -460,13 +460,23 @@ body {
   margin-top: 35px;
   border-radius: 4px;
 }
-.specialist__row {
+.specialist__data {
+  background: linear-gradient(45deg, #eae4e4, #f0eded);
   display: flex;
   max-width: 750px;
-  margin: 0 auto;
+  margin: 25px auto 0;
   flex-direction: column;
 }
-.specialist__data {
+.specialist__row {
+  background-color: #f5f5f5;
   display: flex;
   justify-content: space-between;
+  padding: 0 15px;
+  margin: 15px 15px;
+}
+.specialist__delete {
+  align-self: center;
+  height: 35px;
+  margin: 0;
+  max-width: 100px;
 }

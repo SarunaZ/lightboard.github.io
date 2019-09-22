@@ -16,15 +16,26 @@
     border-radius: 4px;
   }
 
-  &__row {
+  &__data {
+    background: linear-gradient(45deg, #eae4e4, #f0eded);
     display: flex;
     max-width: 750px;
-    margin: 0 auto;
+    margin: 25px auto 0;
     flex-direction: column;
   }
 
-  &__data {
+  &__row {
+    background-color: #f5f5f5;
     display: flex;
     justify-content: space-between;
+    padding: 0 15px;
+    margin: 15px 15px;
+  }
+
+  &__delete {
+    align-self: center;
+    height: 35px;
+    margin: 0;
+    max-width: 100px;
   }
 }
