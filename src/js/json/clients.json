@@ -1,12 +1,12 @@
 {
   "clients": [
-    {"name" : "name1", "specialist": "Specialist1", "number" : "101"},
-    {"name" : "name2", "specialist": "Specialist1", "number" : "102"},
-    {"name" : "name3", "specialist": "Specialist2", "number" : "103"},
-    {"name" : "name4", "specialist": "Specialist2", "number" : "104"},
-    {"name" : "name5", "specialist": "Specialist3", "number" : "105"},
-    {"name" : "name6", "specialist": "Specialist3", "number" : "106"},
-    {"name" : "name7", "specialist": "Specialist1", "number" : "108"},
-    {"name" : "name8", "specialist": "Specialist2", "number" : "107"}
+    {"name" : "Dovilė", "specialist": "E.Zigmantienė", "number" : "101"},
+    {"name" : "Lukas", "specialist": "L.Povilaitienė", "number" : "102"},
+    {"name" : "Matas", "specialist": "P.Janulevičius", "number" : "103"},
+    {"name" : "Jeronimas", "specialist": "L.Povilaitienė", "number" : "104"},
+    {"name" : "Juozas", "specialist": "E.Zigmantienė", "number" : "105"},
+    {"name" : "Stanislovas", "specialist": "L.Povilaitienė", "number" : "106"},
+    {"name" : "Angelė", "specialist": "L.Povilaitienė", "number" : "108"},
+    {"name" : "Juozas", "specialist": "P.Janulevičius", "number" : "107"}
   ]
 }
