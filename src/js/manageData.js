@@ -1,3 +1,7 @@
+/**
+ * @file Functionality for selecting and rendering data on the specialist.html page
+ */
+
 import {
   storageData
 } from './storageData.js';
@@ -10,7 +14,7 @@ let checked = [];
 const rederData = () => {
   const getDataRender = () => {
 
-    // Get all different specialists
+    // Get all different specialists names to one list and render it to the select element as options
     newStorageData.map(item => {
       !checked.includes(item.specialist) ? checked.push(item.specialist) : '';
       return checked;
@@ -32,6 +36,7 @@ const rederData = () => {
       clientData.map(item => {
         const div = createNode('div', 'specialist__row');
         dataContainer.appendChild(div);
+        // Adding a data set to button, so function could filter specific information out
         const markUp = `
             <p class="specialist__client-name">${item.name}</p>
             <p class="specialist__client-no">${item.number}</p>
@@ -42,6 +47,8 @@ const rederData = () => {
     }
     dataMap();
   }
+
+  // Handler for deleting entries and creating a new list to store on localstorage
   const deleteHandler = () => {
     document.addEventListener('click', (e) => {
       if (e.target.matches('.specialist__delete')) {
@@ -62,5 +69,6 @@ const rederData = () => {
   } : '';
 }
 
+// Only render data if there is data and if there is a specific element
 localStorage.length !== 0 ? rederData() :
   specialist ? specialist.innerText = "No data" : '';
