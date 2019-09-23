@@ -1,16 +1,16 @@
 .admin {
   &__form {
-    @media screen and (min-width: 768px) {
-      max-width: 450px;
-      height: 400px;
-    }
-
     background: linear-gradient(45deg, #f8f8f8, #d3d3d3);
     border-radius: 10px;
     box-sizing: border-box;
     padding: 0 10px;
     text-align: center;
     width: 100%;
+
+    @media screen and (min-width: 768px) {
+      max-width: 450px;
+      height: 400px;
+    }
   }
 
   &__input {
@@ -37,12 +37,18 @@
   }
 
   &__submit {
-    @media screen and (min-width: 768px) {
-      margin-bottom: 0;
-    }
-
     background-color: #60d55b;
     color: #fbfbfb;
     margin: 50px auto;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__confirmation-text {
+    color: green;
+    margin: 0;
+    padding-bottom: 15px;
   }
 }
